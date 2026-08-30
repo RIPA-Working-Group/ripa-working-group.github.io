@@ -42,10 +42,13 @@ body {
     background: var(--white);
 }
 
+/* Horizontal padding only. Setting the shorthand here would zero out the
+   vertical padding on elements that carry both `section` and `container`. */
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 /* Typography */
@@ -173,14 +176,13 @@ main {
 }
 
 section {
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 /* Intro / scope questions */
 .intro-section p {
     font-size: 1.0625rem;
     color: var(--gray-700);
-    max-width: 720px;
 }
 
 .questions-list {
@@ -189,7 +191,6 @@ section {
     background: var(--gray-50);
     border: 1px solid var(--gray-200);
     border-radius: 8px;
-    max-width: 720px;
 }
 
 .questions-list li {
