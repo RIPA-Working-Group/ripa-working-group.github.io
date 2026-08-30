@@ -144,7 +144,8 @@ nav {
 
 nav .container {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -227,6 +228,16 @@ section {
     line-height: 1.5;
 }
 
+.tba {
+    color: var(--gray-600);
+    font-size: 0.9375rem;
+    padding: 1.5rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin: 0;
+}
+
 /* Schedule */
 .schedule {
     border: 1px solid var(--gray-200);
@@ -278,15 +289,6 @@ section {
 
 .event {
     flex-grow: 1;
-}
-
-.session-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.0625rem;
-    color: var(--gray-900);
-    line-height: 1.3;
-    margin-bottom: 0.35rem;
 }
 
 .presenter {
@@ -355,32 +357,40 @@ section {
     font-size: 0.9375rem;
 }
 
-/* Papers */
-.papers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-}
-
-.paper-card {
-    background: var(--white);
+/* Papers and reading list — one shared list treatment, no cards */
+.papers-grid,
+.reading-cards {
+    display: block;
     border: 1px solid var(--gray-200);
-    border-top: 3px solid var(--columbia-blue);
     border-radius: 8px;
-    padding: 1.25rem;
-    transition: box-shadow 0.2s;
+    overflow: hidden;
 }
 
-.paper-card:hover {
-    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.10);
+.paper-card,
+.reading-card {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 0.875rem 1.25rem;
+    transition: background 0.2s;
 }
 
-.paper-card .paper-title {
+.paper-card:last-child,
+.reading-card:last-child {
+    border-bottom: none;
+}
+
+.paper-card:hover,
+.reading-card:hover {
+    background: var(--gray-50);
+}
+
+.paper-card .paper-title,
+.reading-card-title {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.35;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     color: var(--gray-900);
 }
 
@@ -392,48 +402,57 @@ section {
     color: var(--columbia-navy);
 }
 
-.paper-card .paper-authors {
+.paper-card .paper-authors,
+.reading-card-authors {
+    display: inline;
     font-size: 0.875rem;
     color: var(--gray-600);
-    margin-bottom: 0.25rem;
 }
 
-.paper-card .paper-venue {
-    font-size: 0.8125rem;
+.paper-card .paper-venue,
+.reading-card-venue {
+    display: inline;
+    font-size: 0.875rem;
     color: var(--gray-500);
 }
 
-/* Reading list */
+.paper-card .paper-authors::after,
+.reading-card-authors::after {
+    content: " \00b7 ";
+    color: var(--gray-400);
+}
+
+/* Reading list tabs */
 .topic-tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--gray-200);
 }
 
 .topic-tab {
     font-family: 'Source Sans 3', sans-serif;
-    padding: 0.5rem 1rem;
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 100px;
-    font-size: 0.875rem;
+    padding: 0 0 0.35rem 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--gray-700);
+    color: var(--gray-600);
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 .topic-tab:hover {
-    background: var(--gray-200);
+    color: var(--columbia-navy);
 }
 
 .topic-tab.active {
-    background: var(--columbia-navy);
-    border-color: var(--columbia-navy);
-    color: var(--white);
+    color: var(--columbia-navy);
+    font-weight: 600;
+    border-bottom-color: var(--columbia-blue);
 }
 
 .topic-section {
@@ -458,45 +477,6 @@ section {
 
 .topic-section > .topic-header:first-child {
     margin-top: 0;
-}
-
-.reading-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-}
-
-.reading-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-top: 3px solid var(--columbia-blue);
-    border-radius: 8px;
-    padding: 1.25rem;
-    transition: box-shadow 0.2s;
-}
-
-.reading-card:hover {
-    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.10);
-}
-
-.reading-card-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--gray-900);
-    line-height: 1.35;
-}
-
-.reading-card-authors {
-    font-size: 0.875rem;
-    color: var(--gray-600);
-    margin-bottom: 0.25rem;
-}
-
-.reading-card-venue {
-    font-size: 0.8125rem;
-    color: var(--gray-500);
 }
 
 /* Media */
@@ -589,7 +569,6 @@ footer p {
 
     nav .container {
         gap: 1rem;
-        flex-wrap: wrap;
     }
 
     .event-details {
