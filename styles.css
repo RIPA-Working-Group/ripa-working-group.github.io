@@ -642,3 +642,12 @@ footer p {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* Reading list titles may carry a link */
+.reading-card-title a {
+    color: var(--gray-900);
+}
+
+.reading-card-title a:hover {
+    color: var(--columbia-navy);
+}
