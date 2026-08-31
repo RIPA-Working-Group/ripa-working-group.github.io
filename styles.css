@@ -335,6 +335,13 @@ section {
     font-weight: 600;
 }
 
+/* Paper title inside a schedule row (seminar sessions) */
+.time-block .paper-title {
+    color: var(--gray-700);
+    font-size: 0.9375rem;
+    margin-top: 0.25rem;
+}
+
 .session-questions {
     margin-top: 0.75rem;
     padding-top: 0.75rem;
