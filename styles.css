@@ -346,6 +346,12 @@ section {
 }
 
 /* Paper title inside a schedule row (seminar sessions) */
+.time-block .paper-authors {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
 .time-block .paper-title {
     color: var(--gray-700);
     font-size: 0.9375rem;
