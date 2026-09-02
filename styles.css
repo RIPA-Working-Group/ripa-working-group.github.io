@@ -222,6 +222,16 @@ section {
     margin-bottom: 0;
 }
 
+.goals-list {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+}
+
+.goals-list li {
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
 /* Event Details */
 .event-details {
     display: flex;
