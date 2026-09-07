@@ -353,9 +353,20 @@ section {
 }
 
 .time-block .paper-title {
-    color: var(--gray-700);
+    color: var(--gray-900);
     font-size: 0.9375rem;
+    font-weight: 600;
     margin-top: 0.25rem;
+}
+
+/* Linked and unlinked session titles should look the same; the link
+   reveals itself on hover, as on the Related Papers page. */
+.time-block .paper-title a {
+    color: var(--gray-900);
+}
+
+.time-block .paper-title a:hover {
+    color: var(--columbia-navy);
 }
 
 .session-questions {
