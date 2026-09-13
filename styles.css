@@ -369,6 +369,24 @@ section {
     color: var(--columbia-navy);
 }
 
+/* Title on the left, actions on the right; they stack on narrow screens. */
+.paper-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+}
+
+.paper-title-row .paper-title {
+    flex: 1 1 18rem;
+}
+
+.paper-title-row .event-actions {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
 .event-actions {
     display: flex;
     flex-wrap: wrap;
