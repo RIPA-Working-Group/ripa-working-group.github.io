@@ -734,3 +734,26 @@ footer p {
 .reading-card-title a:hover {
     color: var(--columbia-navy);
 }
+
+/* Upcoming seminar poster, shown under the organizers line */
+.upcoming-poster {
+    margin: 2rem 0 0;
+}
+
+.upcoming-poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+}
+
+.upcoming-poster a:hover img {
+    border-color: var(--columbia-navy);
+}
+
+.upcoming-poster figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+}
