@@ -737,7 +737,8 @@ footer p {
 
 /* Upcoming seminar poster, shown under the organizers line */
 .upcoming-poster {
-    margin: 2rem 0 0;
+    margin: 2rem auto 0;
+    width: 80%;
 }
 
 .upcoming-poster img {
@@ -748,12 +749,3 @@ footer p {
     border-radius: 8px;
 }
 
-.upcoming-poster a:hover img {
-    border-color: var(--columbia-navy);
-}
-
-.upcoming-poster figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.8125rem;
-    color: var(--gray-500);
-}
