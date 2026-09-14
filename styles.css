@@ -764,3 +764,15 @@ footer p {
 .register-line a {
     font-weight: 600;
 }
+
+/* Copy-poster action under the upcoming poster */
+.poster-actions {
+    width: 80%;
+    margin: 0.75rem auto 0;
+    text-align: right;
+}
+
+.poster-actions button.event-action {
+    font-family: inherit;
+    cursor: pointer;
+}
