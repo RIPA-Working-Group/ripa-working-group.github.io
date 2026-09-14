@@ -749,3 +749,19 @@ footer p {
     border-radius: 8px;
 }
 
+
+/* Registration call-to-action above the upcoming poster */
+.register-line {
+    margin: 1.75rem 0 0;
+    padding: 1rem 1.25rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--columbia-blue);
+    border-radius: 8px;
+    font-size: 1.0625rem;
+    color: var(--gray-700);
+}
+
+.register-line a {
+    font-weight: 600;
+}
