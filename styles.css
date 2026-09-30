@@ -776,3 +776,14 @@ footer p {
     font-family: inherit;
     cursor: pointer;
 }
+
+/* Session recordings on the Past Sessions page */
+.session-video {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    margin-top: 1rem;
+    background: #000;
+    border-radius: 4px;
+}
