@@ -51,6 +51,19 @@
             </p>
         </section>
 
+        <section class="container" id="subscribe">
+            <h2>Mailing List</h2>
+            <p>Sign up to receive seminar announcements.</p>
+            <form id="mc-form" class="mc-form" method="post"
+                  action="https://workshop-efi.us19.list-manage.com/subscribe/post?u=1558a06a94f11b4a9bc852d02&amp;id=555997da09&amp;f_id=000963e7f0">
+                <input type="email" name="EMAIL" placeholder="Email address" required aria-label="Email address">
+                <input type="text" name="MMERGE5" placeholder="Full name (optional)" aria-label="Full name">
+                <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_1558a06a94f11b4a9bc852d02_555997da09" tabindex="-1" value=""></div>
+                <button type="submit" class="event-action">Subscribe</button>
+            </form>
+            <p id="mc-status" class="mc-status" role="status"></p>
+        </section>
+
         <section class="container">
             <h2>Preliminary Schedule</h2>
             <div class="event-details">
@@ -154,6 +167,34 @@
                     }
                 }
             });
+        });
+
+        // Submit the Mailchimp signup in place through its JSONP endpoint. If the
+        // script cannot load, fall back to a normal post (Mailchimp's page, same tab).
+        const mcForm = document.getElementById("mc-form");
+        const mcStatus = document.getElementById("mc-status");
+        mcForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const callback = "mcCallback" + Date.now();
+            const script = document.createElement("script");
+            window[callback] = (data) => {
+                delete window[callback];
+                script.remove();
+                if (data.result === "success") {
+                    mcForm.hidden = true;
+                    mcStatus.textContent = "Thanks! Check your email to confirm your subscription.";
+                } else {
+                    mcStatus.textContent = String(data.msg || "Something went wrong. Please try again.")
+                        .replace(/<[^>]*>/g, "").replace(/^\d+ - /, "");
+                }
+            };
+            script.onerror = () => {
+                delete window[callback];
+                mcForm.submit();
+            };
+            const params = new URLSearchParams(new FormData(mcForm));
+            script.src = mcForm.action.replace("/subscribe/post?", "/subscribe/post-json?") + "&" + params + "&c=" + callback;
+            document.body.appendChild(script);
         });
     </script>
 </body>

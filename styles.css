@@ -777,6 +777,39 @@ footer p {
     cursor: pointer;
 }
 
+/* Mailing list signup on the seminar page */
+.mc-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.mc-form input {
+    flex: 1 1 14rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.mc-form button.event-action {
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: var(--white);
+}
+
+.mc-status {
+    margin-top: 0.5rem;
+    color: var(--gray-700);
+}
+
+.mc-status:empty {
+    display: none;
+}
+
 /* Session recordings on the Past Sessions page */
 .session-video {
     display: block;
